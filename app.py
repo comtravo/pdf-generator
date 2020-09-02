@@ -16,9 +16,9 @@ def application(request):
     The application will return a response with the PDF file.
     """
     if request.method != "POST":
-        return
+        return Response("Hello from pdf-generator")
     if request.content_type != "application/json":
-        return
+        return Response("request.content_type is not application/json")
 
     payload = json.loads(request.data)
 
