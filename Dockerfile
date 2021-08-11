@@ -19,7 +19,6 @@ COPY fonts/Inter-Regular.ttf /usr/share/fonts/google/inter
 COPY fonts/Inter-SemiBold.ttf /usr/share/fonts/google/inter
 RUN chmod 644 /usr/share/fonts/google/inter/*
 
-
 # Install dependencies for running web service
 RUN pip install werkzeug executor gunicorn
 
