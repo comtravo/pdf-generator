@@ -9,15 +9,15 @@ RUN wget -q https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/
 RUN dpkg -i wkhtmltox_0.12.6-1.buster_amd64.deb
 
 # Install custom fonts
-RUN mkdir -p /usr/share/fonts/truetype/cambon
-COPY fonts/Cambon-Demi.otf /usr/share/fonts/truetype/cambon
-COPY fonts/Cambon-DemiItalic.otf /usr/share/fonts/truetype/cambon
-RUN chmod 644 /usr/share/fonts/truetype/cambon/*
+RUN mkdir -p /usr/share/fonts/opentype/cambon
+COPY fonts/Cambon-Demi.otf /usr/share/fonts/opentype/cambon
+COPY fonts/Cambon-DemiItalic.otf /usr/share/fonts/opentype/cambon
+RUN chmod 644 /usr/share/fonts/opentype/cambon/*
 
-RUN mkdir -p /usr/share/fonts/google/inter
-COPY fonts/Inter-Regular.ttf /usr/share/fonts/google/inter
-COPY fonts/Inter-SemiBold.ttf /usr/share/fonts/google/inter
-RUN chmod 644 /usr/share/fonts/google/inter/*
+RUN mkdir -p /usr/share/fonts/truetype/inter
+COPY fonts/Inter-Regular.ttf /usr/share/fonts/truetype/inter
+COPY fonts/Inter-SemiBold.ttf /usr/share/fonts/truetype/inter
+RUN chmod 644 /usr/share/fonts/truetype/inter/*
 
 # Install dependencies for running web service
 RUN pip install werkzeug executor gunicorn
