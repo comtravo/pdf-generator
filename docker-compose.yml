@@ -1,8 +1,0 @@
-version: '3.8'
-
-services:
-  base:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    image: comtravo/pdf-generator:${GIT_COMMIT}
